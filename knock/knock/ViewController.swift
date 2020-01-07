@@ -12,6 +12,7 @@ import CoreMotion
 class ViewController: UIViewController {
 
     @IBOutlet weak var door: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,15 @@ class ViewController: UIViewController {
                      * The knock occurs in the Z-axis.
                      * The X-axis and Y-axis are there to limit opening the door when the user moves the tablet in Z-axis without knocking.
                      */
-                    if( (x > -0.1 && x < 0.1) &&
-                        (y > -0.1 && y < 0.1) &&
+                    if( (x > -0.05 && x < 0.5) &&
+                        (y > -0.05 && y < 0.05) &&
                         (z < -1.0 || z > -0.98)){
 
                         //print("x:", x, ", y:", y, ", z:", z)
                         if (knockReset == 0) {
                             // First knock
                             print("First Knock")
+                            self.label.text = "Knock"
                             knockReset = initialTimer //Set up timer
                         }
                         /*
@@ -57,6 +59,7 @@ class ViewController: UIViewController {
                         else if(knockReset < (initialTimer-10)){
                             // Second knock
                             print("Double Knocked")
+                            self.label.text = "Well done"
                             knockReset = 0
                             
                             timer.invalidate()
@@ -71,6 +74,9 @@ class ViewController: UIViewController {
                     //Reduce reset timer
                     if(knockReset > 0){
                         knockReset = knockReset-1
+                        if (knockReset == 0){
+                            self.label.text = "Knock Knock"
+                        }
                     }
                 }
             })
@@ -85,10 +91,4 @@ class ViewController: UIViewController {
         let openedDoor = UIImage(named: "door-opened.jpg")
         door.image = openedDoor
     }
-    
-    func startAccelerometers() {
-       // Make sure the accelerometer hardware is available.
-
-    }
-    
 }
