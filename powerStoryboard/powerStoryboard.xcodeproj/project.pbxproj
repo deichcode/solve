@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1126ABEB23CA0E8C00E90AF4 /* PowerCableConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126ABEA23CA0E8C00E90AF4 /* PowerCableConnectionService.swift */; };
 		28E3F20D23C34C6B00BDDE57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E3F20C23C34C6B00BDDE57 /* AppDelegate.swift */; };
 		28E3F20F23C34C6B00BDDE57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E3F20E23C34C6B00BDDE57 /* SceneDelegate.swift */; };
-		28E3F21123C34C6B00BDDE57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E3F21023C34C6B00BDDE57 /* ViewController.swift */; };
+		28E3F21123C34C6B00BDDE57 /* LampPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E3F21023C34C6B00BDDE57 /* LampPuzzleViewController.swift */; };
 		28E3F21423C34C6B00BDDE57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E3F21223C34C6B00BDDE57 /* Main.storyboard */; };
 		28E3F21623C34C6C00BDDE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E3F21523C34C6C00BDDE57 /* Assets.xcassets */; };
 		28E3F21923C34C6C00BDDE57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E3F21723C34C6C00BDDE57 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1126ABEA23CA0E8C00E90AF4 /* PowerCableConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCableConnectionService.swift; sourceTree = "<group>"; };
 		28E3F20923C34C6B00BDDE57 /* powerStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = powerStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E3F20C23C34C6B00BDDE57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E3F20E23C34C6B00BDDE57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28E3F21023C34C6B00BDDE57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28E3F21023C34C6B00BDDE57 /* LampPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampPuzzleViewController.swift; sourceTree = "<group>"; };
 		28E3F21323C34C6B00BDDE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28E3F21523C34C6C00BDDE57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28E3F21823C34C6C00BDDE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1126ABEC23CA0E9800E90AF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1126ABEA23CA0E8C00E90AF4 /* PowerCableConnectionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1126ABED23CA0EA500E90AF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28E3F21023C34C6B00BDDE57 /* LampPuzzleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		28E3F20023C34C6B00BDDE57 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +78,12 @@
 		28E3F20B23C34C6B00BDDE57 /* powerStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				1126ABED23CA0EA500E90AF4 /* Controllers */,
+				1126ABEC23CA0E9800E90AF4 /* Services */,
 				28E3F22623C3557900BDDE57 /* Off.png */,
 				28E3F22723C3557900BDDE57 /* On.png */,
 				28E3F20C23C34C6B00BDDE57 /* AppDelegate.swift */,
 				28E3F20E23C34C6B00BDDE57 /* SceneDelegate.swift */,
-				28E3F21023C34C6B00BDDE57 /* ViewController.swift */,
 				28E3F21223C34C6B00BDDE57 /* Main.storyboard */,
 				28E3F21523C34C6C00BDDE57 /* Assets.xcassets */,
 				28E3F21723C34C6C00BDDE57 /* LaunchScreen.storyboard */,
@@ -146,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28E3F21123C34C6B00BDDE57 /* ViewController.swift in Sources */,
+				28E3F21123C34C6B00BDDE57 /* LampPuzzleViewController.swift in Sources */,
 				28E3F20D23C34C6B00BDDE57 /* AppDelegate.swift in Sources */,
 				28E3F20F23C34C6B00BDDE57 /* SceneDelegate.swift in Sources */,
+				1126ABEB23CA0E8C00E90AF4 /* PowerCableConnectionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
