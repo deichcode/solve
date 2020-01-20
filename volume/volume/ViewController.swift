@@ -13,10 +13,35 @@ class ViewController: UIViewController {
     //audioLevel used to detect up/down Volume button
     private var audioLevel : Float = 0.0
     
-    @IBOutlet weak var volumeLabel: UILabel!
+    var helpButtonCount : Int = 0
+    
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var volumeImage: UIImageView!
     
     @IBOutlet weak var down_left_Label: UILabel!
     @IBOutlet weak var up_right_Label: UILabel!
+    @IBOutlet weak var buttonLabel: UIButton!
+    
+    @IBAction func helpButton(_ sender: Any) {
+        if helpButtonCount == 0 {
+            buttonLabel.setTitle("more help", for: .normal)
+            let volume = UIImage(named: "speakers-1521314_1280.png")
+            self.volumeImage.image = volume
+            helpButtonCount += 1
+        } else if helpButtonCount == 1 {
+            let arrow = UIImage(named: "right-297788_1280.png")
+            self.arrowImage.image = arrow
+            helpButtonCount += 1
+        } else {
+            // create the alert
+            let alert = UIAlertController(title: "No more help", message: "You should be able to solve this now 😉", preferredStyle: UIAlertController.Style.alert)
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +50,7 @@ class ViewController: UIViewController {
         volumeView.isHidden = false
         volumeView.alpha = 0.01
         view.addSubview(volumeView)
-    
+
         up_right_Label.text = ""
         down_left_Label.text = ""
         
@@ -80,7 +105,7 @@ class ViewController: UIViewController {
     //gets Volume Up/Down as input and will decide in which state the solve is
     func levelDecide(updown: String) {
         if updown == "up" {
-            volumeLabel.text = "up"
+            print("up")
             if upCount == 0 {
                 upCount = 1
             } else if upCount == 1{
@@ -89,13 +114,11 @@ class ViewController: UIViewController {
                 upCount = 0
             }
         } else if updown == "down" {
-            volumeLabel.text = "down"
+            print("down")
             if upCount == 2 {
                 print("Success")
-                
                 // create the alert
                 let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
-
                 // add the actions (buttons)
                 alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
                 // show the alert

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2977A8FD23D5965200E8D81E /* speakers-1521314_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */; };
+		2977A90023D5985C00E8D81E /* right-297788_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 2977A8FF23D5985C00E8D81E /* right-297788_1280.png */; };
 		298EAF6123BDF1FD00D6D360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF6023BDF1FD00D6D360 /* AppDelegate.swift */; };
 		298EAF6323BDF1FD00D6D360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF6223BDF1FD00D6D360 /* SceneDelegate.swift */; };
 		298EAF6523BDF1FD00D6D360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF6423BDF1FD00D6D360 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakers-1521314_1280.png"; sourceTree = "<group>"; };
+		2977A8FF23D5985C00E8D81E /* right-297788_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right-297788_1280.png"; path = "../../../volume/volume/right-297788_1280.png"; sourceTree = "<group>"; };
 		298EAF5D23BDF1FD00D6D360 /* volume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = volume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298EAF6023BDF1FD00D6D360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		298EAF6223BDF1FD00D6D360 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +66,9 @@
 				298EAF6623BDF1FD00D6D360 /* Main.storyboard */,
 				298EAF6923BDF20200D6D360 /* Assets.xcassets */,
 				298EAF6B23BDF20200D6D360 /* LaunchScreen.storyboard */,
+				2977A8FF23D5985C00E8D81E /* right-297788_1280.png */,
 				298EAF6E23BDF20200D6D360 /* Info.plist */,
+				2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */,
 			);
 			path = volume;
 			sourceTree = "<group>";
@@ -125,8 +131,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2977A90023D5985C00E8D81E /* right-297788_1280.png in Resources */,
 				298EAF6D23BDF20200D6D360 /* LaunchScreen.storyboard in Resources */,
 				298EAF6A23BDF20200D6D360 /* Assets.xcassets in Resources */,
+				2977A8FD23D5965200E8D81E /* speakers-1521314_1280.png in Resources */,
 				298EAF6823BDF1FD00D6D360 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
