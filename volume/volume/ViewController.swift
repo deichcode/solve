@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var volumeImage: UIImageView!
     
+    @IBOutlet weak var effectLeftImage: UIImageView!
+    @IBOutlet weak var effectRightImage: UIImageView!
+    
     @IBOutlet weak var down_left_Label: UILabel!
     @IBOutlet weak var up_right_Label: UILabel!
     @IBOutlet weak var buttonLabel: UIButton!
@@ -50,7 +53,7 @@ class ViewController: UIViewController {
         volumeView.isHidden = false
         volumeView.alpha = 0.01
         view.addSubview(volumeView)
-
+        
         up_right_Label.text = ""
         down_left_Label.text = ""
         
@@ -88,12 +91,24 @@ class ViewController: UIViewController {
          if keyPath == "outputVolume"{
               let audioSession = AVAudioSession.sharedInstance()
               if audioSession.outputVolume > audioLevel {
+                DispatchQueue.main.async {
+                    let effect = UIImage(named: "speedLinesRounded.png")
+                    self.effectLeftImage.image = effect
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    self.effectLeftImage.image = nil
+                }
                 levelDecide(updown: "up")
-                print("Up")
               }
               if audioSession.outputVolume < audioLevel {
+                DispatchQueue.main.async {
+                    let effect = UIImage(named: "speedLinesRounded.png")
+                    self.effectRightImage.image = effect
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    self.effectRightImage.image = nil
+                }
                 levelDecide(updown: "down")
-                print("Down")
               }
               audioLevel = audioSession.outputVolume
               print(audioSession.outputVolume)
@@ -104,8 +119,8 @@ class ViewController: UIViewController {
 
     //gets Volume Up/Down as input and will decide in which state the solve is
     func levelDecide(updown: String) {
+        print(upCount)
         if updown == "up" {
-            print("up")
             if upCount == 0 {
                 upCount = 1
             } else if upCount == 1{
@@ -114,7 +129,6 @@ class ViewController: UIViewController {
                 upCount = 0
             }
         } else if updown == "down" {
-            print("down")
             if upCount == 2 {
                 print("Success")
                 // create the alert

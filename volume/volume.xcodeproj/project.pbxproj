@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291053FE23D5FBB700ECB9E1 /* speedLinesRounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 291053FD23D5FBB700ECB9E1 /* speedLinesRounded.png */; };
 		2977A8FD23D5965200E8D81E /* speakers-1521314_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */; };
 		2977A90023D5985C00E8D81E /* right-297788_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 2977A8FF23D5985C00E8D81E /* right-297788_1280.png */; };
 		298EAF6123BDF1FD00D6D360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF6023BDF1FD00D6D360 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291053FD23D5FBB700ECB9E1 /* speedLinesRounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedLinesRounded.png; sourceTree = "<group>"; };
 		2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakers-1521314_1280.png"; sourceTree = "<group>"; };
 		2977A8FF23D5985C00E8D81E /* right-297788_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right-297788_1280.png"; path = "../../../volume/volume/right-297788_1280.png"; sourceTree = "<group>"; };
 		298EAF5D23BDF1FD00D6D360 /* volume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = volume.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 				298EAF6B23BDF20200D6D360 /* LaunchScreen.storyboard */,
 				2977A8FF23D5985C00E8D81E /* right-297788_1280.png */,
 				298EAF6E23BDF20200D6D360 /* Info.plist */,
+				291053FD23D5FBB700ECB9E1 /* speedLinesRounded.png */,
 				2977A8FB23D5965200E8D81E /* speakers-1521314_1280.png */,
 			);
 			path = volume;
@@ -135,6 +138,7 @@
 				298EAF6D23BDF20200D6D360 /* LaunchScreen.storyboard in Resources */,
 				298EAF6A23BDF20200D6D360 /* Assets.xcassets in Resources */,
 				2977A8FD23D5965200E8D81E /* speakers-1521314_1280.png in Resources */,
+				291053FE23D5FBB700ECB9E1 /* speedLinesRounded.png in Resources */,
 				298EAF6823BDF1FD00D6D360 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = none.volume;
+				PRODUCT_BUNDLE_IDENTIFIER = none.volume.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = none.volume;
+				PRODUCT_BUNDLE_IDENTIFIER = none.volume.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
