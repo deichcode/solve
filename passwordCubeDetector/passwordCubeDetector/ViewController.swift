@@ -95,7 +95,7 @@ class ViewController: UIViewController {
                         print(self.recognizedText)
                         
                         if self.state == "none" {
-                            if self.recognizedText.contains("O") {
+                            if self.recognizedText.contains("P") {
                                 DispatchQueue.main.async {
                                 self.first_letter_label.text = "O"
                                 let letter_image = UIImage(named: "image_o.png")
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
                         }
                         
                         if self.state == "O" {
-                            if self.recognizedText.contains("P") {
+                            if self.recognizedText.contains("O") {
                                 DispatchQueue.main.async {
                                 self.second_letter_label.text = "P"
                                 let letter_image = UIImage(named: "image_p.png")
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
                             }
                         }
                         if self.state == "P" {
-                            if self.recognizedText.contains("E") {
+                            if self.recognizedText.contains("A") {
                                 DispatchQueue.main.async {
                                 self.third_letter_label.text = "E"
                                 let letter_image = UIImage(named: "image_e.png")
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
                             }
                         }
                         if self.state == "E" {
-                            if self.recognizedText.contains("N") {
+                            if self.recognizedText.contains("V") {
                                 DispatchQueue.main.async {
                                 self.fourth_letter_label.text = "N"
                                 let letter_image = UIImage(named: "image_n.png")
