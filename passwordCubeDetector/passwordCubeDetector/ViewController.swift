@@ -20,20 +20,18 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var password_field_image: UIImageView!
-    @IBOutlet weak var first_letter_image: UIImageView!
-    @IBOutlet weak var second_letter_image: UIImageView!
-    @IBOutlet weak var third_letter_image: UIImageView!
-    @IBOutlet weak var fourth_letter_image: UIImageView!
     
     var session = AVCaptureSession()
     var requests = [VNRequest]()
+    
+    var state : String = "none"
     
     var textRecognitionRequest = VNRecognizeTextRequest()
     var recognizedText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let password_field = UIImage(named: "image_password_field.png")
+        let password_field = UIImage(named: "password.png")
         self.password_field_image.image = password_field
         
         startLiveVideo()
@@ -61,10 +59,8 @@ class ViewController: UIViewController {
     func startLiveVideo() {
             //1
             session.sessionPreset = AVCaptureSession.Preset.photo
-            let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-            
             //2
-        let deviceInput = try! AVCaptureDeviceInput(device: selectDevice())
+            let deviceInput = try! AVCaptureDeviceInput(device: selectDevice())
             let deviceOutput = AVCaptureVideoDataOutput()
             
             
@@ -96,40 +92,53 @@ class ViewController: UIViewController {
                               self.recognizedText += candidiate.string
                             self.recognizedText += "\n"
                         }
-                       print(self.recognizedText)
-                        if self.recognizedText.contains("O") {
-                            DispatchQueue.main.async {
-                            self.first_letter_label.text = "O"
-                            let letter_image = UIImage(named: "image_o.png")
-                            self.first_letter_image.image = letter_image
+                        print(self.recognizedText)
+                        
+                        if self.state == "none" {
+                            if self.recognizedText.contains("O") {
+                                DispatchQueue.main.async {
+                                self.first_letter_label.text = "O"
+                                let letter_image = UIImage(named: "image_o.png")
+                                self.password_field_image.image = letter_image
+                                }
+                                self.state = "O"
                             }
                         }
-                        if self.recognizedText.contains("P") {
-                            DispatchQueue.main.async {
-                            self.second_letter_label.text = "P"
-                            let letter_image = UIImage(named: "image_p.png")
-                            self.second_letter_image.image = letter_image
+                        
+                        if self.state == "O" {
+                            if self.recognizedText.contains("P") {
+                                DispatchQueue.main.async {
+                                self.second_letter_label.text = "P"
+                                let letter_image = UIImage(named: "image_p.png")
+                                self.password_field_image.image = letter_image
+                                }
+                                self.state = "P"
                             }
                         }
-                        if self.recognizedText.contains("E") {
-                            DispatchQueue.main.async {
-                            self.third_letter_label.text = "E"
-                            let letter_image = UIImage(named: "image_e.png")
-                            self.third_letter_image.image = letter_image
+                        if self.state == "P" {
+                            if self.recognizedText.contains("E") {
+                                DispatchQueue.main.async {
+                                self.third_letter_label.text = "E"
+                                let letter_image = UIImage(named: "image_e.png")
+                                self.password_field_image.image = letter_image
+                                }
+                                self.state = "E"
                             }
                         }
-                        if self.recognizedText.contains("N") {
-                            DispatchQueue.main.async {
-                            self.fourth_letter_label.text = "N"
-                            let letter_image = UIImage(named: "image_n.png")
-                            self.fourth_letter_image.image = letter_image
+                        if self.state == "E" {
+                            if self.recognizedText.contains("N") {
+                                DispatchQueue.main.async {
+                                self.fourth_letter_label.text = "N"
+                                let letter_image = UIImage(named: "image_n.png")
+                                self.password_field_image.image = letter_image
+                                }
+                                self.state = "N"
                             }
                         }
                         DispatchQueue.main.async {
-                            if self.first_letter_label.text == "O" && self.second_letter_label.text == "P" && self.third_letter_label.text == "E" && self.fourth_letter_label.text == "N" {
+                            if self.state == "N" {
                                 // create the alert
                                 let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
-
                                 // add the actions (buttons)
                                 alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
                                 // show the alert

@@ -13,11 +13,11 @@
 		29A25F8423D0D4B1005A4979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F8223D0D4B1005A4979 /* Main.storyboard */; };
 		29A25F8623D0D4B7005A4979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F8523D0D4B7005A4979 /* Assets.xcassets */; };
 		29A25F8923D0D4B7005A4979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F8723D0D4B7005A4979 /* LaunchScreen.storyboard */; };
-		29A25F9723D0E11C005A4979 /* image_e.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F9423D0E11C005A4979 /* image_e.png */; };
-		29A25F9823D0E11C005A4979 /* image_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F9523D0E11C005A4979 /* image_n.png */; };
-		29A25F9923D0E11C005A4979 /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F9623D0E11C005A4979 /* image_p.png */; };
-		29A25F9B23D0E12A005A4979 /* image_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F9A23D0E12A005A4979 /* image_o.png */; };
-		29A25F9D23D0E682005A4979 /* image_password_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A25F9C23D0E682005A4979 /* image_password_field.png */; };
+		29C1B4F223D5A49E0055E763 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1B4F123D5A49E0055E763 /* password.png */; };
+		29C1B4F723D5AAE60055E763 /* image_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1B4F323D5AAE50055E763 /* image_n.png */; };
+		29C1B4F823D5AAE60055E763 /* image_e.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1B4F423D5AAE60055E763 /* image_e.png */; };
+		29C1B4F923D5AAE60055E763 /* image_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1B4F523D5AAE60055E763 /* image_o.png */; };
+		29C1B4FA23D5AAE60055E763 /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1B4F623D5AAE60055E763 /* image_p.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		29A25F8523D0D4B7005A4979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29A25F8823D0D4B7005A4979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A25F8A23D0D4B7005A4979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29A25F9423D0E11C005A4979 /* image_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_e.png; sourceTree = "<group>"; };
-		29A25F9523D0E11C005A4979 /* image_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_n.png; sourceTree = "<group>"; };
-		29A25F9623D0E11C005A4979 /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_p.png; sourceTree = "<group>"; };
-		29A25F9A23D0E12A005A4979 /* image_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_o.png; sourceTree = "<group>"; };
-		29A25F9C23D0E682005A4979 /* image_password_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_password_field.png; sourceTree = "<group>"; };
+		29C1B4F123D5A49E0055E763 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		29C1B4F323D5AAE50055E763 /* image_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_n.png; sourceTree = "<group>"; };
+		29C1B4F423D5AAE60055E763 /* image_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_e.png; sourceTree = "<group>"; };
+		29C1B4F523D5AAE60055E763 /* image_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_o.png; sourceTree = "<group>"; };
+		29C1B4F623D5AAE60055E763 /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_p.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +72,11 @@
 				29A25F8223D0D4B1005A4979 /* Main.storyboard */,
 				29A25F8523D0D4B7005A4979 /* Assets.xcassets */,
 				29A25F8723D0D4B7005A4979 /* LaunchScreen.storyboard */,
-				29A25F9423D0E11C005A4979 /* image_e.png */,
-				29A25F9523D0E11C005A4979 /* image_n.png */,
-				29A25F9623D0E11C005A4979 /* image_p.png */,
-				29A25F9C23D0E682005A4979 /* image_password_field.png */,
-				29A25F9A23D0E12A005A4979 /* image_o.png */,
+				29C1B4F123D5A49E0055E763 /* password.png */,
+				29C1B4F423D5AAE60055E763 /* image_e.png */,
+				29C1B4F323D5AAE50055E763 /* image_n.png */,
+				29C1B4F523D5AAE60055E763 /* image_o.png */,
+				29C1B4F623D5AAE60055E763 /* image_p.png */,
 				29A25F8A23D0D4B7005A4979 /* Info.plist */,
 			);
 			path = passwordCubeDetector;
@@ -140,14 +140,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C1B4FA23D5AAE60055E763 /* image_p.png in Resources */,
+				29C1B4F223D5A49E0055E763 /* password.png in Resources */,
 				29A25F8923D0D4B7005A4979 /* LaunchScreen.storyboard in Resources */,
 				29A25F8623D0D4B7005A4979 /* Assets.xcassets in Resources */,
-				29A25F9823D0E11C005A4979 /* image_n.png in Resources */,
-				29A25F9D23D0E682005A4979 /* image_password_field.png in Resources */,
+				29C1B4F923D5AAE60055E763 /* image_o.png in Resources */,
 				29A25F8423D0D4B1005A4979 /* Main.storyboard in Resources */,
-				29A25F9723D0E11C005A4979 /* image_e.png in Resources */,
-				29A25F9923D0E11C005A4979 /* image_p.png in Resources */,
-				29A25F9B23D0E12A005A4979 /* image_o.png in Resources */,
+				29C1B4F723D5AAE60055E763 /* image_n.png in Resources */,
+				29C1B4F823D5AAE60055E763 /* image_e.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
