@@ -1,5 +1,5 @@
 //
-//  accelerometer.swift
+//  Acceleration.swift
 //  Solve
 //
 //  Created by Marek Elznic on 22/01/2020.

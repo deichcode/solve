@@ -32,7 +32,7 @@
 		29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */; };
 		C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */; };
 		C67B577223D8DD030073ADAA /* door-opened.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B577123D8DD030073ADAA /* door-opened.jpeg */; };
-		C67B577623D8E4860073ADAA /* accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67B577523D8E4860073ADAA /* accelerometer.swift */; };
+		C67B577623D8E4860073ADAA /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67B577523D8E4860073ADAA /* Acceleration.swift */; };
 		C67B577923D8E92C0073ADAA /* PowerCableConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67B577823D8E92C0073ADAA /* PowerCableConnectionService.swift */; };
 		C67B577C23D8EBFC0073ADAA /* lamp-off.png in Resources */ = {isa = PBXBuildFile; fileRef = C67B577A23D8EBFC0073ADAA /* lamp-off.png */; };
 		C67B577D23D8EBFC0073ADAA /* lamp-on.png in Resources */ = {isa = PBXBuildFile; fileRef = C67B577B23D8EBFC0073ADAA /* lamp-on.png */; };
@@ -66,7 +66,7 @@
 		29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_passwordCube.swift; path = solve/passwordCube/ViewController_passwordCube.swift; sourceTree = SOURCE_ROOT; };
 		C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-closed.jpeg"; path = "solve/img/door-closed.jpeg"; sourceTree = SOURCE_ROOT; };
 		C67B577123D8DD030073ADAA /* door-opened.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-opened.jpeg"; path = "solve/img/door-opened.jpeg"; sourceTree = SOURCE_ROOT; };
-		C67B577523D8E4860073ADAA /* accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = accelerometer.swift; path = solve/models/accelerometer.swift; sourceTree = SOURCE_ROOT; };
+		C67B577523D8E4860073ADAA /* Acceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Acceleration.swift; path = solve/models/Acceleration.swift; sourceTree = SOURCE_ROOT; };
 		C67B577823D8E92C0073ADAA /* PowerCableConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PowerCableConnectionService.swift; path = solve/services/PowerCableConnectionService.swift; sourceTree = SOURCE_ROOT; };
 		C67B577A23D8EBFC0073ADAA /* lamp-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lamp-off.png"; path = "solve/img/lamp-off.png"; sourceTree = SOURCE_ROOT; };
 		C67B577B23D8EBFC0073ADAA /* lamp-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lamp-on.png"; path = "solve/img/lamp-on.png"; sourceTree = SOURCE_ROOT; };
@@ -171,7 +171,7 @@
 		C67B577423D8E4630073ADAA /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C67B577523D8E4860073ADAA /* accelerometer.swift */,
+				C67B577523D8E4860073ADAA /* Acceleration.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			files = (
 				1118F24523D85D0800FDCC2E /* GameScene.swift in Sources */,
 				C67B577923D8E92C0073ADAA /* PowerCableConnectionService.swift in Sources */,
-				C67B577623D8E4860073ADAA /* accelerometer.swift in Sources */,
+				C67B577623D8E4860073ADAA /* Acceleration.swift in Sources */,
 				1118F2B523D8732700FDCC2E /* GameScene_maze.swift in Sources */,
 				1118F24723D85D0800FDCC2E /* GameViewController.swift in Sources */,
 				29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */,

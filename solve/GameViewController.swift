@@ -11,11 +11,30 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
+enum SceneState {
+    case unknown
+    case lampOff
+    case lampOn
+}
+
 class GameViewController: UIViewController {
 
     @IBOutlet weak var screenLabel: UILabel!
     @IBOutlet weak var door: UIImageView!
+    @IBOutlet weak var Lamp: UIImageView!
     
+    let powerCableConnectionService : PowerCableConnectionServiceProtocol
+    let offImage: UIImage = UIImage(named: "lamp-off")!
+    let onImage: UIImage = UIImage(named: "lamp-on")!
+    let closedDoor: UIImage = UIImage(named: "door-closed.jpeg")!
+    var currentState: SceneState
+
+
+    required init?(coder aDecoder: NSCoder) {
+        powerCableConnectionService = PowerCableConnectionService()
+        currentState = .unknown
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +54,43 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+
         
-        let closedDoor = UIImage(named: "door-closed.jpeg")
-        door.image = closedDoor
-        self.screenLabel.text = "Knock Knock"
-        
+        powerCableConnectionService.register(connectCallback: turnLampOn)
+        powerCableConnectionService.register(disconnectCallback: turnLampOff)
+        updateScene()
+    }
+    
+    private func updateScene() {
+        let isPluggedIn = powerCableConnectionService.isPluggedIn()
+        if (!isPluggedIn) {
+            currentState = .lampOff
+            Lamp.image = offImage
+            door.image = nil
+            screenLabel.text = ""
+            print("plugged out")
+        }
+        else {
+            currentState = .lampOn
+            Lamp.image = onImage
+            door.image = closedDoor
+            screenLabel.text = "Knock Knock"
+            observeDoor()
+            print ("plugged in")
+        }
+    }
+
+    private func turnLampOn() {
+        Lamp.image = onImage
+        updateScene()
+    }
+    
+    private func turnLampOff() {
+        Lamp.image = offImage
+        updateScene()
+    }
+    
+    private func observeDoor(){
         let motion = CMMotionManager()
         let motionUpdateInterval = 1.0/60.0     //60 Hz
         
@@ -51,25 +102,15 @@ class GameViewController: UIViewController {
             var calibration : Int = 10 //We need the first 10 cycles for calibration
             let knockTimer : Int = 60 //Timer for the second knock to occur
             // Accelerometer data
-            var rollingX : Double = 0
-            var rollingY : Double = 0
-            var rollingZ : Double = 0
-            var x : Double = 0
-            var y : Double = 0
-            var z : Double = 0
-            let kFilteringFactor : Double = 0.5
-            
+            var acceleration = Acceleration(smooth : (0,0,0), rolling : (0,0,0))
+            print("cool")
             // Configure a timer to fetch the data periodically
             let timer = Timer(fire: Date(), interval: motionUpdateInterval, repeats: true, block: { (timer) in
                 // Get the accelerometer data
                 if let data = motion.accelerometerData {
                     // High pass filter to smoothen our data
-                    rollingX = (data.acceleration.x * kFilteringFactor) + (rollingX * (1.0 - kFilteringFactor))
-                    rollingY = (data.acceleration.y * kFilteringFactor) + (rollingY * (1.0 - kFilteringFactor))
-                    rollingZ = (data.acceleration.z * kFilteringFactor) + (rollingZ * (1.0 - kFilteringFactor))
-                    x = data.acceleration.x - rollingX
-                    y = data.acceleration.y - rollingY
-                    z = data.acceleration.z - rollingZ
+                    let currentValues = (x: data.acceleration.x, y: data.acceleration.y,z: data.acceleration.z)
+                    acceleration = self.highPassFilter(currentValues: currentValues,acceleration: acceleration)
 
                     /*
                      * A threshold for a knock.
@@ -79,9 +120,9 @@ class GameViewController: UIViewController {
                      * x is the smoothen value
                      * data.acceleration.x is the value from the accelerometer
                      */
-                    if( abs(x) < 0.02 && abs(data.acceleration.x) < 0.02 &&
-                        abs(y) < 0.02 && abs(data.acceleration.y) < 0.02 &&
-                        abs(z) > 0.05 &&
+                    if( abs(acceleration.smooth.x) < 0.02 && abs(data.acceleration.x) < 0.02 &&
+                        abs(acceleration.smooth.y) < 0.02 && abs(data.acceleration.y) < 0.02 &&
+                        abs(acceleration.smooth.z) > 0.05 &&
                         calibration == 0 ){
 
                         if (knockReset == 0) {
@@ -124,14 +165,27 @@ class GameViewController: UIViewController {
                     }
                 }
             })
+        
         // Add the timer to the current run loop.
         RunLoop.current.add(timer, forMode: .default)
         }
-
-        
-        
     }
-
+    
+    /*
+     * High pass filter to smoothen our data
+     */
+    private func highPassFilter(currentValues: (x: Double, y: Double,z: Double), acceleration: Acceleration) -> Acceleration{
+        let kFilteringFactor : Double = 0.5
+        var nextAcceleration = Acceleration(smooth : (0,0,0), rolling : (0,0,0))
+        nextAcceleration.rolling.x = (currentValues.x * kFilteringFactor) + (acceleration.rolling.x * (1.0 - kFilteringFactor))
+        nextAcceleration.rolling.y = (currentValues.y * kFilteringFactor) + (acceleration.rolling.y * (1.0 - kFilteringFactor))
+        nextAcceleration.rolling.z = (currentValues.z * kFilteringFactor) + (acceleration.rolling.z * (1.0 - kFilteringFactor))
+        nextAcceleration.smooth.x = currentValues.x - nextAcceleration.rolling.x
+        nextAcceleration.smooth.y = currentValues.y - nextAcceleration.rolling.y
+        nextAcceleration.smooth.z = currentValues.z - nextAcceleration.rolling.z
+        return nextAcceleration
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }
