@@ -305,13 +305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F3J5KRTGTH;
+				DEVELOPMENT_TEAM = 8493XD9JJJ;
 				INFOPLIST_FILE = powerStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = schroede.earth.powerStoryboard;
+				PRODUCT_BUNDLE_IDENTIFIER = elznic.rwth.solve;
 				PRODUCT_NAME = power;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -323,13 +323,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F3J5KRTGTH;
+				DEVELOPMENT_TEAM = 8493XD9JJJ;
 				INFOPLIST_FILE = powerStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = schroede.earth.powerStoryboard;
+				PRODUCT_BUNDLE_IDENTIFIER = elznic.rwth.solve;
 				PRODUCT_NAME = power;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

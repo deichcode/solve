@@ -26,11 +26,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfX-LO-dOS">
+                                <rect key="frame" x="45" y="289" width="128" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
+                        <outlet property="Lamp" destination="jfX-LO-dOS" id="uS5-jO-dF4"/>
                         <outlet property="door" destination="oaL-XD-kEs" id="kpN-6d-a3H"/>
                         <outlet property="screenLabel" destination="ZV4-xa-hyx" id="9Od-bv-bYP"/>
                     </connections>
