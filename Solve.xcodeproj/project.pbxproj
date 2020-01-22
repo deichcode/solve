@@ -17,19 +17,19 @@
 		1118F2A023D8732700FDCC2E /* volume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28123D8732700FDCC2E /* volume.storyboard */; };
 		1118F2A123D8732700FDCC2E /* speakers-1521314_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28223D8732700FDCC2E /* speakers-1521314_1280.png */; };
 		1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28323D8732700FDCC2E /* speedLinesRounded.png */; };
-		1118F2A323D8732700FDCC2E /* ViewController_volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F28423D8732700FDCC2E /* ViewController_volume.swift */; };
 		1118F2A423D8732700FDCC2E /* right-297788_1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28523D8732700FDCC2E /* right-297788_1280.png */; };
-		1118F2A623D8732700FDCC2E /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F28923D8732700FDCC2E /* ViewController_passwordCube.swift */; };
 		1118F2A723D8732700FDCC2E /* image_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28A23D8732700FDCC2E /* image_n.png */; };
 		1118F2A823D8732700FDCC2E /* image_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F28B23D8732700FDCC2E /* image_o.png */; };
 		1118F2AE23D8732700FDCC2E /* image_e.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29223D8732700FDCC2E /* image_e.png */; };
 		1118F2AF23D8732700FDCC2E /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29323D8732700FDCC2E /* image_p.png */; };
 		1118F2B023D8732700FDCC2E /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29423D8732700FDCC2E /* password.png */; };
 		1118F2B123D8732700FDCC2E /* passwordCube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29523D8732700FDCC2E /* passwordCube.storyboard */; };
-		1118F2B223D8732700FDCC2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29723D8732700FDCC2E /* GameViewController.swift */; };
+		1118F2B223D8732700FDCC2E /* GameViewController_maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29723D8732700FDCC2E /* GameViewController_maze.swift */; };
 		1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29823D8732700FDCC2E /* Maze.storyboard */; };
-		1118F2B423D8732700FDCC2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29923D8732700FDCC2E /* GameScene.sks */; };
-		1118F2B523D8732700FDCC2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29A23D8732700FDCC2E /* GameScene.swift */; };
+		1118F2B423D8732700FDCC2E /* GameScene_maze.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29923D8732700FDCC2E /* GameScene_maze.sks */; };
+		1118F2B523D8732700FDCC2E /* GameScene_maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29A23D8732700FDCC2E /* GameScene_maze.swift */; };
+		29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */; };
+		29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,19 +45,19 @@
 		1118F28123D8732700FDCC2E /* volume.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = volume.storyboard; sourceTree = "<group>"; };
 		1118F28223D8732700FDCC2E /* speakers-1521314_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakers-1521314_1280.png"; sourceTree = "<group>"; };
 		1118F28323D8732700FDCC2E /* speedLinesRounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedLinesRounded.png; sourceTree = "<group>"; };
-		1118F28423D8732700FDCC2E /* ViewController_volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_volume.swift; sourceTree = "<group>"; };
 		1118F28523D8732700FDCC2E /* right-297788_1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-297788_1280.png"; sourceTree = "<group>"; };
-		1118F28923D8732700FDCC2E /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_passwordCube.swift; sourceTree = "<group>"; };
 		1118F28A23D8732700FDCC2E /* image_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_n.png; sourceTree = "<group>"; };
 		1118F28B23D8732700FDCC2E /* image_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_o.png; sourceTree = "<group>"; };
 		1118F29223D8732700FDCC2E /* image_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_e.png; sourceTree = "<group>"; };
 		1118F29323D8732700FDCC2E /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_p.png; sourceTree = "<group>"; };
 		1118F29423D8732700FDCC2E /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		1118F29523D8732700FDCC2E /* passwordCube.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = passwordCube.storyboard; sourceTree = "<group>"; };
-		1118F29723D8732700FDCC2E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1118F29723D8732700FDCC2E /* GameViewController_maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController_maze.swift; sourceTree = "<group>"; };
 		1118F29823D8732700FDCC2E /* Maze.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maze.storyboard; sourceTree = "<group>"; };
-		1118F29923D8732700FDCC2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		1118F29A23D8732700FDCC2E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		1118F29923D8732700FDCC2E /* GameScene_maze.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_maze.sks; sourceTree = "<group>"; };
+		1118F29A23D8732700FDCC2E /* GameScene_maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_maze.swift; sourceTree = "<group>"; };
+		29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_volume.swift; path = solve/volumeRockers/ViewController_volume.swift; sourceTree = SOURCE_ROOT; };
+		29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_passwordCube.swift; path = solve/passwordCube/ViewController_passwordCube.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 				1118F28123D8732700FDCC2E /* volume.storyboard */,
 				1118F28223D8732700FDCC2E /* speakers-1521314_1280.png */,
 				1118F28323D8732700FDCC2E /* speedLinesRounded.png */,
-				1118F28423D8732700FDCC2E /* ViewController_volume.swift */,
 				1118F28523D8732700FDCC2E /* right-297788_1280.png */,
+				29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */,
 			);
 			path = volumeRockers;
 			sourceTree = "<group>";
@@ -120,13 +120,13 @@
 		1118F28823D8732700FDCC2E /* passwordCube */ = {
 			isa = PBXGroup;
 			children = (
-				1118F28923D8732700FDCC2E /* ViewController_passwordCube.swift */,
 				1118F28A23D8732700FDCC2E /* image_n.png */,
 				1118F28B23D8732700FDCC2E /* image_o.png */,
 				1118F29223D8732700FDCC2E /* image_e.png */,
 				1118F29323D8732700FDCC2E /* image_p.png */,
 				1118F29423D8732700FDCC2E /* password.png */,
 				1118F29523D8732700FDCC2E /* passwordCube.storyboard */,
+				29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */,
 			);
 			path = passwordCube;
 			sourceTree = "<group>";
@@ -134,10 +134,10 @@
 		1118F29623D8732700FDCC2E /* maze */ = {
 			isa = PBXGroup;
 			children = (
-				1118F29723D8732700FDCC2E /* GameViewController.swift */,
+				1118F29723D8732700FDCC2E /* GameViewController_maze.swift */,
 				1118F29823D8732700FDCC2E /* Maze.storyboard */,
-				1118F29923D8732700FDCC2E /* GameScene.sks */,
-				1118F29A23D8732700FDCC2E /* GameScene.swift */,
+				1118F29923D8732700FDCC2E /* GameScene_maze.sks */,
+				1118F29A23D8732700FDCC2E /* GameScene_maze.swift */,
 			);
 			path = maze;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 				1118F24123D85D0800FDCC2E /* GameScene.sks in Resources */,
 				1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */,
 				1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */,
-				1118F2B423D8732700FDCC2E /* GameScene.sks in Resources */,
+				1118F2B423D8732700FDCC2E /* GameScene_maze.sks in Resources */,
 				1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */,
 				1118F2A423D8732700FDCC2E /* right-297788_1280.png in Resources */,
 				1118F24F23D85D0F00FDCC2E /* LaunchScreen.storyboard in Resources */,
@@ -226,12 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1118F2A323D8732700FDCC2E /* ViewController_volume.swift in Sources */,
 				1118F24523D85D0800FDCC2E /* GameScene.swift in Sources */,
-				1118F2B523D8732700FDCC2E /* GameScene.swift in Sources */,
+				1118F2B523D8732700FDCC2E /* GameScene_maze.swift in Sources */,
 				1118F24723D85D0800FDCC2E /* GameViewController.swift in Sources */,
-				1118F2B223D8732700FDCC2E /* GameViewController.swift in Sources */,
-				1118F2A623D8732700FDCC2E /* ViewController_passwordCube.swift in Sources */,
+				29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */,
+				29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */,
+				1118F2B223D8732700FDCC2E /* GameViewController_maze.swift in Sources */,
 				1118F23F23D85D0800FDCC2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

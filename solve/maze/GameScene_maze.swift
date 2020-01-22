@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene_maze: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager = CMMotionManager()
     

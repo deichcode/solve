@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+class GameViewController_maze: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
