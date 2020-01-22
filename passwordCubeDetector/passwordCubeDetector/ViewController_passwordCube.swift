@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Vision
 
-class ViewController: UIViewController {
+class ViewController_passwordCube: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var first_letter_label: UILabel!
@@ -193,7 +193,7 @@ class ViewController: UIViewController {
         }
     }
 
-    extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    extension ViewController_passwordCube: AVCaptureVideoDataOutputSampleBufferDelegate {
         func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
             guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
                 return
