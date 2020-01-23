@@ -73,6 +73,7 @@ class ViewController_passwordCube: UIViewController {
             //3
             let imageLayer = AVCaptureVideoPreviewLayer(session: session)
             imageLayer.frame = imageView.bounds
+            imageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
             imageView.layer.addSublayer(imageLayer)
 
             session.startRunning()
@@ -205,21 +206,19 @@ class ViewController_passwordCube: UIViewController {
                 requestOptions = [.cameraIntrinsics:camData]
             }
             
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 6)!, options: requestOptions)
-            
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 1)!, options: requestOptions)
             do {
                 try imageRequestHandler.perform(self.requests)
             } catch {
                 print(error)
             }
             
-            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 6)!, options: requestOptions)
-              do {
-                  try handler.perform([textRecognitionRequest])
-              } catch {
+            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 1)!, options: requestOptions)
+            do {
+                try handler.perform([textRecognitionRequest])
+            } catch {
                   print(error)
-              }
-            
+            }
         }
     }
 
