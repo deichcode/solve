@@ -10,7 +10,7 @@
         <!--View Controller volume-->
         <scene sceneID="zdM-fI-mrc">
             <objects>
-                <viewController storyboardIdentifier="volumeViewController" id="zmU-zB-h0y" customClass="ViewController_volume" customModule="passwordCubeDetector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="volume" id="zmU-zB-h0y" customClass="ViewController_volume" customModule="Solve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wIs-mO-xU6">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

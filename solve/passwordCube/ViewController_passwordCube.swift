@@ -141,7 +141,9 @@ class ViewController_passwordCube: UIViewController {
                                 // create the alert
                                 let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
                                 // add the actions (buttons)
-                                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
+                                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!)-> Void in
+                                    self.performSegue(withIdentifier: "segueMaze", sender: self)
+                                }))
                                 // show the alert
                                 self.present(alert, animated: true, completion: nil)
                             }
