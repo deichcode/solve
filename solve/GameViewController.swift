@@ -11,10 +11,15 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-enum SceneState {
+enum LampState {
     case unknown
     case lampOff
     case lampOn
+}
+
+enum SceneState {
+    case unsolved
+    case solved
 }
 
 class GameViewController: UIViewController {
@@ -27,12 +32,14 @@ class GameViewController: UIViewController {
     let offImage: UIImage = UIImage(named: "lamp-off")!
     let onImage: UIImage = UIImage(named: "lamp-on")!
     let closedDoor: UIImage = UIImage(named: "door-closed.jpeg")!
-    var currentState: SceneState
+    var currentLampState: LampState
+    var currentSceneState: SceneState = .unsolved
+    
 
 
     required init?(coder aDecoder: NSCoder) {
         powerCableConnectionService = PowerCableConnectionService()
-        currentState = .unknown
+        currentLampState = .unknown
         super.init(coder: aDecoder)
     }
 
@@ -58,35 +65,37 @@ class GameViewController: UIViewController {
         
         powerCableConnectionService.register(connectCallback: turnLampOn)
         powerCableConnectionService.register(disconnectCallback: turnLampOff)
+        if (currentSceneState == .solved) {
+            screenLabel?.text = "Knock Knock"
+            observeDoor()
+        }
         updateScene()
     }
     
     private func updateScene() {
         let isPluggedIn = powerCableConnectionService.isPluggedIn()
         if (!isPluggedIn) {
-            currentState = .lampOff
-            Lamp.image = offImage
-            door.image = nil
+            currentLampState = .lampOff
+            Lamp?.image = offImage
+            door?.image = nil
             screenLabel.text = ""
-            print("plugged out")
+//            print("plugged out")
         }
         else {
-            currentState = .lampOn
+            currentLampState = .lampOn
             Lamp.image = onImage
             door.image = closedDoor
-            screenLabel.text = "Knock Knock"
-            observeDoor()
-            print ("plugged in")
+//            screenLabel?.text = "Knock Knock"
+//            observeDoor()
+//            print ("plugged in")
         }
     }
-
+    
     private func turnLampOn() {
-        Lamp.image = onImage
         updateScene()
     }
     
     private func turnLampOff() {
-        Lamp.image = offImage
         updateScene()
     }
     

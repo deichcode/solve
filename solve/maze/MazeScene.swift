@@ -10,7 +10,9 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class GameScene_maze: SKScene, SKPhysicsContactDelegate {
+class MazeScene : SKScene, SKPhysicsContactDelegate {
+    
+    var viewController: MazeViewController!
     
     var motionManager: CMMotionManager = CMMotionManager()
     
@@ -94,6 +96,8 @@ class GameScene_maze: SKScene, SKPhysicsContactDelegate {
             if(contact.bodyA.node?.name == holeName || contact.bodyB.node?.name == holeName ) {
                 guard let marble = self.childNode(withName: marbleName) else { return }
                 marble.removeFromParent()
+                sleep(1)
+                viewController.performSegue(withIdentifier: "segueVolume", sender: self)
             }
         }
     }

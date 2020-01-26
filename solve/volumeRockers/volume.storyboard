@@ -54,6 +54,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-hI-DGM">
+                                <rect key="frame" x="972" y="19" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="JWp-Dp-UCw" kind="modal" modalPresentationStyle="fullScreen" id="db0-gw-X9j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="de4-cT-wlC"/>
@@ -66,11 +74,23 @@
                         <outlet property="effectRightImage" destination="sMC-Lr-tTJ" id="rmG-6i-4mF"/>
                         <outlet property="up_right_Label" destination="3fx-eK-lCi" id="5dE-QZ-whS"/>
                         <outlet property="volumeImage" destination="ESH-hR-Tkb" id="Axh-4z-0Ew"/>
+                        <segue destination="JWp-Dp-UCw" kind="modal" identifier="seguePasswordCube" modalPresentationStyle="fullScreen" id="tvV-RT-pHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89M-59-0WL" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.8671875" y="109.375"/>
         </scene>
+        <!--passwordCube-->
+        <scene sceneID="lUY-TF-Ghr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="passwordCube" id="JWp-Dp-UCw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6y6-i1-FUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680" y="109"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="db0-gw-X9j"/>
+    </inferredMetricsTieBreakers>
 </document>

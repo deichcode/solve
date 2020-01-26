@@ -47,6 +47,13 @@ class ViewController_passwordCube: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let targetViewController = segue.destination as? GameViewController else {
+            return
+        }
+        targetViewController.currentSceneState = .solved
+    }
     
     func selectDevice() -> AVCaptureDevice{
         if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
@@ -134,18 +141,21 @@ class ViewController_passwordCube: UIViewController {
                                 self.password_field_image.image = letter_image
                                 }
                                 self.state = "N"
+                                sleep(2)
                             }
                         }
                         DispatchQueue.main.async {
                             if self.state == "N" {
-                                // create the alert
-                                let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
-                                // add the actions (buttons)
-                                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!)-> Void in
-                                    self.performSegue(withIdentifier: "segueMaze", sender: self)
-                                }))
-                                // show the alert
-                                self.present(alert, animated: true, completion: nil)
+//                                // create the alert
+//                                let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
+//                                // add the actions (buttons)
+//                                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!)-> Void in
+//                                    self.performSegue(withIdentifier: "segueMaze", sender: self)
+//                                }))
+//                                // show the alert
+//                                self.present(alert, animated: true, completion: nil)
+                                
+                                self.performSegue(withIdentifier: "segueMain", sender: self)
                             }
                         }
                     }

@@ -24,10 +24,10 @@
 		1118F2AF23D8732700FDCC2E /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29323D8732700FDCC2E /* image_p.png */; };
 		1118F2B023D8732700FDCC2E /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29423D8732700FDCC2E /* password.png */; };
 		1118F2B123D8732700FDCC2E /* passwordCube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29523D8732700FDCC2E /* passwordCube.storyboard */; };
-		1118F2B223D8732700FDCC2E /* GameViewController_maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29723D8732700FDCC2E /* GameViewController_maze.swift */; };
 		1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29823D8732700FDCC2E /* Maze.storyboard */; };
-		1118F2B423D8732700FDCC2E /* GameScene_maze.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29923D8732700FDCC2E /* GameScene_maze.sks */; };
-		1118F2B523D8732700FDCC2E /* GameScene_maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29A23D8732700FDCC2E /* GameScene_maze.swift */; };
+		1118F2B423D8732700FDCC2E /* MazeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1118F29923D8732700FDCC2E /* MazeScene.sks */; };
+		1118F2B523D8732700FDCC2E /* MazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29A23D8732700FDCC2E /* MazeScene.swift */; };
+		28078EA323DE218F008FF290 /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28078EA223DE218F008FF290 /* MazeViewController.swift */; };
 		29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */; };
 		29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */; };
 		C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */; };
@@ -58,10 +58,10 @@
 		1118F29323D8732700FDCC2E /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_p.png; sourceTree = "<group>"; };
 		1118F29423D8732700FDCC2E /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		1118F29523D8732700FDCC2E /* passwordCube.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = passwordCube.storyboard; sourceTree = "<group>"; };
-		1118F29723D8732700FDCC2E /* GameViewController_maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController_maze.swift; sourceTree = "<group>"; };
 		1118F29823D8732700FDCC2E /* Maze.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Maze.storyboard; sourceTree = "<group>"; };
-		1118F29923D8732700FDCC2E /* GameScene_maze.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_maze.sks; sourceTree = "<group>"; };
-		1118F29A23D8732700FDCC2E /* GameScene_maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_maze.swift; sourceTree = "<group>"; };
+		1118F29923D8732700FDCC2E /* MazeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MazeScene.sks; sourceTree = "<group>"; };
+		1118F29A23D8732700FDCC2E /* MazeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeScene.swift; sourceTree = "<group>"; };
+		28078EA223DE218F008FF290 /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MazeViewController.swift; path = solve/maze/MazeViewController.swift; sourceTree = SOURCE_ROOT; };
 		29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_volume.swift; path = solve/volumeRockers/ViewController_volume.swift; sourceTree = SOURCE_ROOT; };
 		29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_passwordCube.swift; path = solve/passwordCube/ViewController_passwordCube.swift; sourceTree = SOURCE_ROOT; };
 		C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-closed.jpeg"; path = "solve/img/door-closed.jpeg"; sourceTree = SOURCE_ROOT; };
@@ -149,10 +149,10 @@
 		1118F29623D8732700FDCC2E /* maze */ = {
 			isa = PBXGroup;
 			children = (
-				1118F29723D8732700FDCC2E /* GameViewController_maze.swift */,
 				1118F29823D8732700FDCC2E /* Maze.storyboard */,
-				1118F29923D8732700FDCC2E /* GameScene_maze.sks */,
-				1118F29A23D8732700FDCC2E /* GameScene_maze.swift */,
+				1118F29923D8732700FDCC2E /* MazeScene.sks */,
+				1118F29A23D8732700FDCC2E /* MazeScene.swift */,
+				28078EA223DE218F008FF290 /* MazeViewController.swift */,
 			);
 			path = maze;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 				1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */,
 				1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */,
 				C67B577D23D8EBFC0073ADAA /* lamp-on.png in Resources */,
-				1118F2B423D8732700FDCC2E /* GameScene_maze.sks in Resources */,
+				1118F2B423D8732700FDCC2E /* MazeScene.sks in Resources */,
 				C67B577223D8DD030073ADAA /* door-opened.jpeg in Resources */,
 				1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */,
 				1118F2A423D8732700FDCC2E /* right-297788_1280.png in Resources */,
@@ -275,12 +275,12 @@
 				1118F24523D85D0800FDCC2E /* GameScene.swift in Sources */,
 				C67B577923D8E92C0073ADAA /* PowerCableConnectionService.swift in Sources */,
 				C67B577623D8E4860073ADAA /* Acceleration.swift in Sources */,
-				1118F2B523D8732700FDCC2E /* GameScene_maze.swift in Sources */,
+				1118F2B523D8732700FDCC2E /* MazeScene.swift in Sources */,
 				1118F24723D85D0800FDCC2E /* GameViewController.swift in Sources */,
 				29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */,
 				29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */,
-				1118F2B223D8732700FDCC2E /* GameViewController_maze.swift in Sources */,
 				1118F23F23D85D0800FDCC2E /* AppDelegate.swift in Sources */,
+				28078EA323DE218F008FF290 /* MazeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,13 +425,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DSWKFJV6T9;
+				DEVELOPMENT_TEAM = YXRRP283Y6;
 				INFOPLIST_FILE = Solve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = voelkel.solve;
+				PRODUCT_BUNDLE_IDENTIFIER = schroeder.soeren.solve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -443,13 +443,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DSWKFJV6T9;
+				DEVELOPMENT_TEAM = YXRRP283Y6;
 				INFOPLIST_FILE = Solve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = voelkel.solve;
+				PRODUCT_BUNDLE_IDENTIFIER = schroeder.soeren.solve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

@@ -137,13 +137,15 @@ class ViewController_volume: UIViewController {
             }
         } else if updown == "down" {
             if upCount == 2 {
-                print("Success")
-                // create the alert
-                let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
-                // add the actions (buttons)
-                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
+//                print("Success")
+//                // create the alert
+//                let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
+//                // add the actions (buttons)
+//                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
+//                // show the alert
+//                self.present(alert, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "seguePasswordCube", sender: self)
+                                
             } else {
                 upCount = 0
             }
