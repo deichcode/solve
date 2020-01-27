@@ -7,15 +7,7 @@
 //
 
 import UIKit
-import SpriteKit
-import GameplayKit
 import CoreMotion
-
-enum LampState {
-    case unknown
-    case lampOff
-    case lampOn
-}
 
 enum SceneState {
     case unsolved
@@ -23,82 +15,92 @@ enum SceneState {
 }
 
 class GameViewController: UIViewController {
-
-    @IBOutlet weak var screenLabel: UILabel!
-    @IBOutlet weak var door: UIImageView!
-    @IBOutlet weak var Lamp: UIImageView!
+    @IBOutlet weak var sceneImage: UIImageView!
     
     let powerCableConnectionService : PowerCableConnectionServiceProtocol
-    let offImage: UIImage = UIImage(named: "lamp-off")!
-    let onImage: UIImage = UIImage(named: "lamp-on")!
-    let closedDoor: UIImage = UIImage(named: "door-closed.jpeg")!
-    var currentLampState: LampState
+    
+    let inital_black: UIImage = UIImage(named: "00_inital_black")!
+    let black: UIImage = UIImage(named: "01_black")!
+    let locked: UIImage = UIImage(named: "02_locked")!
+    let unlocked: UIImage = UIImage(named: "03_unlocked")!
+    let knock1: UIImage = UIImage(named: "04_knock")!
+    let knock2: UIImage = UIImage(named: "05_knock_knock")!
+    let joke1: UIImage = UIImage(named: "06_joke")!
+    let joke2: UIImage = UIImage(named: "07_joke")!
+    let joke3: UIImage = UIImage(named: "08_joke")!
+    let joke4: UIImage = UIImage(named: "09_joke")!
+    let joke5: UIImage = UIImage(named: "10_joke")!
+    let jokeImages: [UIImage]
+    let open: UIImage = UIImage(named: "11_open")!
+    let notYourDay: UIImage = UIImage(named: "12_not_your_day")!
+    var lastVisibleSceneImage: UIImage?
+    
     var currentSceneState: SceneState = .unsolved
     
-
-
+    var lampWasOn: Bool = false
+    var showedNotYourDay: Bool = false
+    
     required init?(coder aDecoder: NSCoder) {
         powerCableConnectionService = PowerCableConnectionService()
-        currentLampState = .unknown
+        jokeImages = [joke1, joke2, joke3, joke4, joke5]
         super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
-
-        
-        powerCableConnectionService.register(connectCallback: turnLampOn)
-        powerCableConnectionService.register(disconnectCallback: turnLampOff)
         if (currentSceneState == .solved) {
-            screenLabel?.text = "Knock Knock"
             observeDoor()
         }
+        powerCableConnectionService.register(connectCallback: updateScene)
+        powerCableConnectionService.register(disconnectCallback: updateScene)
         updateScene()
+    }
+    
+    fileprivate func showTextAfterPuzzlesSolved() {
+        DispatchQueue.main.async {
+            self.sceneImage.image = self.notYourDay
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.regularSceneUpdate()
+        }
+        showedNotYourDay = true
     }
     
     private func updateScene() {
+        if(currentSceneState == .solved && !showedNotYourDay) {
+            showTextAfterPuzzlesSolved()
+        } else {
+            regularSceneUpdate()
+        }
+    }
+    
+    fileprivate func regularSceneUpdate() {
         let isPluggedIn = powerCableConnectionService.isPluggedIn()
         if (!isPluggedIn) {
-            currentLampState = .lampOff
-            Lamp?.image = offImage
-            door?.image = nil
-            screenLabel.text = ""
-//            print("plugged out")
+            if(!lampWasOn){
+                sceneImage.image = inital_black
+            } else {
+                sceneImage.image = black
+            }
         }
         else {
-            currentLampState = .lampOn
-            Lamp.image = onImage
-            door.image = closedDoor
-//            screenLabel?.text = "Knock Knock"
-//            observeDoor()
-//            print ("plugged in")
+            lampWasOn = true
+            if lastVisibleSceneImage != nil {
+                sceneImage.image = lastVisibleSceneImage
+            } else {
+                if(currentSceneState == .unsolved){
+                    sceneImage.image = locked
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.performSegue(withIdentifier: "mazeSegue", sender: self)
+                    }
+                } else {
+                    sceneImage.image = unlocked
+                }
+            }
+            lastVisibleSceneImage = sceneImage.image
         }
     }
-    
-    private func turnLampOn() {
-        updateScene()
-    }
-    
-    private func turnLampOff() {
-        updateScene()
-    }
-    
+        
     private func observeDoor(){
         let motion = CMMotionManager()
         let motionUpdateInterval = 1.0/60.0     //60 Hz
@@ -135,8 +137,7 @@ class GameViewController: UIViewController {
                         calibration == 0 ){
 
                         if (knockReset == 0) {
-                            //print("First Knock")
-                            self.screenLabel.text = "Knock"
+                            self.sceneImage.image = self.knock1
                             knockReset = knockTimer //Set up timer
                         }
                         /*
@@ -144,14 +145,14 @@ class GameViewController: UIViewController {
                          * because the sensors aren't still stabilized. We wait 7 cycles
                          */
                         else if(knockReset < (knockTimer-7)){
-                            //print("Double Knocked")
-                            self.screenLabel.text = "Well done"
+                            self.sceneImage.image = self.knock2
                             knockReset = 0
                             timer.invalidate()
-                            let openedDoor = UIImage(named: "door-opened.jpeg")
-                            self.door.image = openedDoor
+                            self.playKnockKnockJoke()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+                                self.sceneImage.image = self.open
+                            }
                         }
-                        //else{print("False double knock")}
                     }
                         
                     /*
@@ -160,7 +161,6 @@ class GameViewController: UIViewController {
                     else if (calibration > 0){
                         calibration = calibration-1
                     }
-                    //else if(z < -1.0 || z > -0.98){print("False knock")}
                     
                     /*
                      * This reduces the timer in which the second knock must occur
@@ -169,7 +169,7 @@ class GameViewController: UIViewController {
                     if(knockReset > 0){
                         knockReset = knockReset-1
                         if (knockReset == 0){
-                            self.screenLabel.text = "Knock Knock"
+                            self.sceneImage.image = self.unlocked
                         }
                     }
                 }
@@ -177,6 +177,16 @@ class GameViewController: UIViewController {
         
         // Add the timer to the current run loop.
         RunLoop.current.add(timer, forMode: .default)
+        }
+    }
+    
+    private func playKnockKnockJoke() {
+        var delay = 0.0
+        for jokeImage in jokeImages {
+            delay += 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.sceneImage.image = jokeImage
+            }
         }
     }
     
