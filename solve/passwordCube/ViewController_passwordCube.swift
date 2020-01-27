@@ -13,10 +13,6 @@ import Vision
 class ViewController_passwordCube: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var first_letter_label: UILabel!
-    @IBOutlet weak var second_letter_label: UILabel!
-    @IBOutlet weak var third_letter_label: UILabel!
-    @IBOutlet weak var fourth_letter_label: UILabel!
     
     
     @IBOutlet weak var password_field_image: UIImageView!
@@ -105,7 +101,6 @@ class ViewController_passwordCube: UIViewController {
                         if self.state == "none" {
                             if self.recognizedText.contains("P") {
                                 DispatchQueue.main.async {
-                                self.first_letter_label.text = "O"
                                 let letter_image = UIImage(named: "image_o.png")
                                 self.password_field_image.image = letter_image
                                 }
@@ -116,7 +111,6 @@ class ViewController_passwordCube: UIViewController {
                         if self.state == "O" {
                             if self.recognizedText.contains("O") {
                                 DispatchQueue.main.async {
-                                self.second_letter_label.text = "P"
                                 let letter_image = UIImage(named: "image_p.png")
                                 self.password_field_image.image = letter_image
                                 }
@@ -126,7 +120,6 @@ class ViewController_passwordCube: UIViewController {
                         if self.state == "P" {
                             if self.recognizedText.contains("A") {
                                 DispatchQueue.main.async {
-                                self.third_letter_label.text = "E"
                                 let letter_image = UIImage(named: "image_e.png")
                                 self.password_field_image.image = letter_image
                                 }
@@ -136,7 +129,6 @@ class ViewController_passwordCube: UIViewController {
                         if self.state == "E" {
                             if self.recognizedText.contains("V") {
                                 DispatchQueue.main.async {
-                                self.fourth_letter_label.text = "N"
                                 let letter_image = UIImage(named: "image_n.png")
                                 self.password_field_image.image = letter_image
                                 }
@@ -199,7 +191,7 @@ class ViewController_passwordCube: UIViewController {
             
             let outline = CALayer()
             outline.frame = CGRect(x: x, y: y, width: width, height: height)
-            outline.borderWidth = 1.0
+            outline.borderWidth = 2.0
             outline.borderColor = UIColor.red.cgColor
             
             imageView.layer.addSublayer(outline)
@@ -218,14 +210,14 @@ class ViewController_passwordCube: UIViewController {
                 requestOptions = [.cameraIntrinsics:camData]
             }
             
-            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 1)!, options: requestOptions)
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 3)!, options: requestOptions)
             do {
                 try imageRequestHandler.perform(self.requests)
             } catch {
                 print(error)
             }
             
-            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 1)!, options: requestOptions)
+            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 3)!, options: requestOptions)
             do {
                 try handler.perform([textRecognitionRequest])
             } catch {
