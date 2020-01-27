@@ -23,11 +23,11 @@
 		1118F2B523D8732700FDCC2E /* MazeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F29A23D8732700FDCC2E /* MazeScene.swift */; };
 		28078EA323DE218F008FF290 /* MazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28078EA223DE218F008FF290 /* MazeViewController.swift */; };
 		2885354623DE48B8004A7081 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885354523DE48B8004A7081 /* GameViewController.swift */; };
-		290C536C23DED64200169DE7 /* image_e.png in Resources */ = {isa = PBXBuildFile; fileRef = 290C536723DED64200169DE7 /* image_e.png */; };
-		290C536D23DED64200169DE7 /* image_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 290C536823DED64200169DE7 /* image_n.png */; };
-		290C536E23DED64200169DE7 /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 290C536923DED64200169DE7 /* image_p.png */; };
-		290C536F23DED64200169DE7 /* image_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 290C536A23DED64200169DE7 /* image_o.png */; };
-		290C537023DED64200169DE7 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 290C536B23DED64200169DE7 /* password.png */; };
+		2941A91923DEDF2800C28A5C /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91423DEDF2800C28A5C /* password.png */; };
+		2941A91A23DEDF2800C28A5C /* image_e.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91523DEDF2800C28A5C /* image_e.png */; };
+		2941A91B23DEDF2800C28A5C /* image_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91623DEDF2800C28A5C /* image_o.png */; };
+		2941A91C23DEDF2800C28A5C /* image_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91723DEDF2800C28A5C /* image_n.png */; };
+		2941A91D23DEDF2800C28A5C /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91823DEDF2800C28A5C /* image_p.png */; };
 		29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */; };
 		29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */; };
 		C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */; };
@@ -57,11 +57,11 @@
 		1118F29A23D8732700FDCC2E /* MazeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeScene.swift; sourceTree = "<group>"; };
 		28078EA223DE218F008FF290 /* MazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MazeViewController.swift; path = solve/maze/MazeViewController.swift; sourceTree = SOURCE_ROOT; };
 		2885354523DE48B8004A7081 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = solve/GameViewController.swift; sourceTree = SOURCE_ROOT; };
-		290C536723DED64200169DE7 /* image_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_e.png; path = passwordCubeDetector/passwordCubeDetector/image_e.png; sourceTree = SOURCE_ROOT; };
-		290C536823DED64200169DE7 /* image_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_n.png; path = passwordCubeDetector/passwordCubeDetector/image_n.png; sourceTree = SOURCE_ROOT; };
-		290C536923DED64200169DE7 /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_p.png; path = passwordCubeDetector/passwordCubeDetector/image_p.png; sourceTree = SOURCE_ROOT; };
-		290C536A23DED64200169DE7 /* image_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_o.png; path = passwordCubeDetector/passwordCubeDetector/image_o.png; sourceTree = SOURCE_ROOT; };
-		290C536B23DED64200169DE7 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password.png; path = passwordCubeDetector/passwordCubeDetector/password.png; sourceTree = SOURCE_ROOT; };
+		2941A91423DEDF2800C28A5C /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password.png; path = solve/passwordCube/password.png; sourceTree = SOURCE_ROOT; };
+		2941A91523DEDF2800C28A5C /* image_e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_e.png; path = solve/passwordCube/image_e.png; sourceTree = SOURCE_ROOT; };
+		2941A91623DEDF2800C28A5C /* image_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_o.png; path = solve/passwordCube/image_o.png; sourceTree = SOURCE_ROOT; };
+		2941A91723DEDF2800C28A5C /* image_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_n.png; path = solve/passwordCube/image_n.png; sourceTree = SOURCE_ROOT; };
+		2941A91823DEDF2800C28A5C /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_p.png; path = solve/passwordCube/image_p.png; sourceTree = SOURCE_ROOT; };
 		29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_volume.swift; path = solve/volumeRockers/ViewController_volume.swift; sourceTree = SOURCE_ROOT; };
 		29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_passwordCube.swift; path = solve/passwordCube/ViewController_passwordCube.swift; sourceTree = SOURCE_ROOT; };
 		C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-closed.jpeg"; path = "solve/img/door-closed.jpeg"; sourceTree = SOURCE_ROOT; };
@@ -135,11 +135,11 @@
 		1118F28823D8732700FDCC2E /* passwordCube */ = {
 			isa = PBXGroup;
 			children = (
-				290C536723DED64200169DE7 /* image_e.png */,
-				290C536823DED64200169DE7 /* image_n.png */,
-				290C536A23DED64200169DE7 /* image_o.png */,
-				290C536923DED64200169DE7 /* image_p.png */,
-				290C536B23DED64200169DE7 /* password.png */,
+				2941A91523DEDF2800C28A5C /* image_e.png */,
+				2941A91723DEDF2800C28A5C /* image_n.png */,
+				2941A91623DEDF2800C28A5C /* image_o.png */,
+				2941A91823DEDF2800C28A5C /* image_p.png */,
+				2941A91423DEDF2800C28A5C /* password.png */,
 				1118F29523D8732700FDCC2E /* passwordCube.storyboard */,
 				29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */,
 			);
@@ -242,13 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290C537023DED64200169DE7 /* password.png in Resources */,
 				1118F24A23D85D0800FDCC2E /* Main.storyboard in Resources */,
 				1118F2B123D8732700FDCC2E /* passwordCube.storyboard in Resources */,
-				290C536D23DED64200169DE7 /* image_n.png in Resources */,
-				290C536F23DED64200169DE7 /* image_o.png in Resources */,
+				2941A91C23DEDF2800C28A5C /* image_n.png in Resources */,
+				2941A91923DEDF2800C28A5C /* password.png in Resources */,
 				1118F2A023D8732700FDCC2E /* volume.storyboard in Resources */,
-				290C536E23DED64200169DE7 /* image_p.png in Resources */,
 				1118F2A123D8732700FDCC2E /* speakers-1521314_1280.png in Resources */,
 				C67B577C23D8EBFC0073ADAA /* lamp-off.png in Resources */,
 				C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */,
@@ -256,12 +254,14 @@
 				1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */,
 				1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */,
 				C67B577D23D8EBFC0073ADAA /* lamp-on.png in Resources */,
+				2941A91D23DEDF2800C28A5C /* image_p.png in Resources */,
 				1118F2B423D8732700FDCC2E /* MazeScene.sks in Resources */,
 				C67B577223D8DD030073ADAA /* door-opened.jpeg in Resources */,
 				1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */,
-				290C536C23DED64200169DE7 /* image_e.png in Resources */,
+				2941A91A23DEDF2800C28A5C /* image_e.png in Resources */,
 				1118F2A423D8732700FDCC2E /* right-297788_1280.png in Resources */,
 				1118F24F23D85D0F00FDCC2E /* LaunchScreen.storyboard in Resources */,
+				2941A91B23DEDF2800C28A5C /* image_o.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
