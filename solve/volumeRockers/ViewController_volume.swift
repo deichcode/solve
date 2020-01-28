@@ -18,10 +18,8 @@ class ViewController_volume: UIViewController {
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var volumeImage: UIImageView!
     
-    
     @IBOutlet weak var effectLeftImage: UIImageView!
     @IBOutlet weak var effectRightImage: UIImageView!
-    
     
     @IBOutlet weak var up_right_Label: UILabel!
     @IBOutlet weak var down_left_Label: UILabel!
@@ -93,7 +91,7 @@ class ViewController_volume: UIViewController {
         
     }
     
-    // do something with the observer difference in audio level used to determine if up/down was pressed
+    // observer difference in audio level used to determine if up/down was pressed
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
          if keyPath == "outputVolume"{
               let audioSession = AVAudioSession.sharedInstance()
@@ -137,15 +135,7 @@ class ViewController_volume: UIViewController {
             }
         } else if updown == "down" {
             if upCount == 2 {
-//                print("Success")
-//                // create the alert
-//                let alert = UIAlertController(title: "Sucess", message: "You solved the puzzle", preferredStyle: UIAlertController.Style.alert)
-//                // add the actions (buttons)
-//                alert.addAction(UIAlertAction(title: "Next...", style: UIAlertAction.Style.default, handler: nil))
-//                // show the alert
-//                self.present(alert, animated: true, completion: nil)
                 self.performSegue(withIdentifier: "seguePasswordCube", sender: self)
-                                
             } else {
                 upCount = 0
             }
