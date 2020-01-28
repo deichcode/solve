@@ -30,12 +30,8 @@
 		2941A91D23DEDF2800C28A5C /* image_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 2941A91823DEDF2800C28A5C /* image_p.png */; };
 		29FEC28523D8C0FE002930A3 /* ViewController_volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */; };
 		29FEC28723D8C139002930A3 /* ViewController_passwordCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */; };
-		C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */; };
-		C67B577223D8DD030073ADAA /* door-opened.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C67B577123D8DD030073ADAA /* door-opened.jpeg */; };
 		C67B577623D8E4860073ADAA /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67B577523D8E4860073ADAA /* Acceleration.swift */; };
 		C67B577923D8E92C0073ADAA /* PowerCableConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67B577823D8E92C0073ADAA /* PowerCableConnectionService.swift */; };
-		C67B577C23D8EBFC0073ADAA /* lamp-off.png in Resources */ = {isa = PBXBuildFile; fileRef = C67B577A23D8EBFC0073ADAA /* lamp-off.png */; };
-		C67B577D23D8EBFC0073ADAA /* lamp-on.png in Resources */ = {isa = PBXBuildFile; fileRef = C67B577B23D8EBFC0073ADAA /* lamp-on.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,12 +60,8 @@
 		2941A91823DEDF2800C28A5C /* image_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_p.png; path = solve/passwordCube/image_p.png; sourceTree = SOURCE_ROOT; };
 		29FEC28423D8C0FE002930A3 /* ViewController_volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_volume.swift; path = solve/volumeRockers/ViewController_volume.swift; sourceTree = SOURCE_ROOT; };
 		29FEC28623D8C139002930A3 /* ViewController_passwordCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController_passwordCube.swift; path = solve/passwordCube/ViewController_passwordCube.swift; sourceTree = SOURCE_ROOT; };
-		C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-closed.jpeg"; path = "solve/img/door-closed.jpeg"; sourceTree = SOURCE_ROOT; };
-		C67B577123D8DD030073ADAA /* door-opened.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "door-opened.jpeg"; path = "solve/img/door-opened.jpeg"; sourceTree = SOURCE_ROOT; };
 		C67B577523D8E4860073ADAA /* Acceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Acceleration.swift; path = solve/models/Acceleration.swift; sourceTree = SOURCE_ROOT; };
 		C67B577823D8E92C0073ADAA /* PowerCableConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PowerCableConnectionService.swift; path = solve/services/PowerCableConnectionService.swift; sourceTree = SOURCE_ROOT; };
-		C67B577A23D8EBFC0073ADAA /* lamp-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lamp-off.png"; path = "solve/img/lamp-off.png"; sourceTree = SOURCE_ROOT; };
-		C67B577B23D8EBFC0073ADAA /* lamp-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lamp-on.png"; path = "solve/img/lamp-on.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +96,6 @@
 			children = (
 				C67B577723D8E91D0073ADAA /* services */,
 				C67B577423D8E4630073ADAA /* models */,
-				C649E10F23D8D7F30030F091 /* img */,
 				1118F29623D8732700FDCC2E /* maze */,
 				1118F28823D8732700FDCC2E /* passwordCube */,
 				1118F28023D8732700FDCC2E /* volumeRockers */,
@@ -155,17 +146,6 @@
 				28078EA223DE218F008FF290 /* MazeViewController.swift */,
 			);
 			path = maze;
-			sourceTree = "<group>";
-		};
-		C649E10F23D8D7F30030F091 /* img */ = {
-			isa = PBXGroup;
-			children = (
-				C67B577A23D8EBFC0073ADAA /* lamp-off.png */,
-				C67B577B23D8EBFC0073ADAA /* lamp-on.png */,
-				C67B577123D8DD030073ADAA /* door-opened.jpeg */,
-				C67B576D23D8DCAA0073ADAA /* door-closed.jpeg */,
-			);
-			path = img;
 			sourceTree = "<group>";
 		};
 		C67B577423D8E4630073ADAA /* models */ = {
@@ -248,15 +228,11 @@
 				2941A91923DEDF2800C28A5C /* password.png in Resources */,
 				1118F2A023D8732700FDCC2E /* volume.storyboard in Resources */,
 				1118F2A123D8732700FDCC2E /* speakers-1521314_1280.png in Resources */,
-				C67B577C23D8EBFC0073ADAA /* lamp-off.png in Resources */,
-				C67B576F23D8DCAA0073ADAA /* door-closed.jpeg in Resources */,
 				1118F24123D85D0800FDCC2E /* GameScene.sks in Resources */,
 				1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */,
 				1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */,
-				C67B577D23D8EBFC0073ADAA /* lamp-on.png in Resources */,
 				2941A91D23DEDF2800C28A5C /* image_p.png in Resources */,
 				1118F2B423D8732700FDCC2E /* MazeScene.sks in Resources */,
-				C67B577223D8DD030073ADAA /* door-opened.jpeg in Resources */,
 				1118F2B323D8732700FDCC2E /* Maze.storyboard in Resources */,
 				2941A91A23DEDF2800C28A5C /* image_e.png in Resources */,
 				1118F2A423D8732700FDCC2E /* right-297788_1280.png in Resources */,
@@ -425,13 +401,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DSWKFJV6T9;
+				DEVELOPMENT_TEAM = 8493XD9JJJ;
 				INFOPLIST_FILE = Solve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marius.solve;
+				PRODUCT_BUNDLE_IDENTIFIER = elznic.rwth.solve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -442,15 +418,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DSWKFJV6T9;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Solve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marius.solve;
+				PRODUCT_BUNDLE_IDENTIFIER = elznic.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

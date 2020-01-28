@@ -8,6 +8,9 @@
 
 import Foundation
 
+/*
+ * Struct that stores data about previous states of the accelerometer.
+ */
 struct Acceleration {
     var smooth:     (x: Double, y: Double, z: Double)
     var rolling:    (x: Double, y: Double, z: Double)

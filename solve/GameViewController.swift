@@ -12,6 +12,9 @@ import CoreMotion
 enum SceneState {
     case unsolved
     case solved
+    case showedNotYourDay
+    case knocked
+    case doubleKnocked
 }
 
 class GameViewController: UIViewController {
@@ -38,7 +41,7 @@ class GameViewController: UIViewController {
     var currentSceneState: SceneState = .unsolved
     
     var lampWasOn: Bool = false
-    var showedNotYourDay: Bool = false
+    //var showedNotYourDay: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         powerCableConnectionService = PowerCableConnectionService()
@@ -63,12 +66,23 @@ class GameViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
             self.regularSceneUpdate()
         }
-        showedNotYourDay = true
+        currentSceneState = .showedNotYourDay
     }
     
+    /*
+     * Function update the current scene based on currentSceneState
+     */
     private func updateScene() {
-        if(currentSceneState == .solved && !showedNotYourDay) {
+        if(currentSceneState == .solved) {
             showTextAfterPuzzlesSolved()
+        } else if(currentSceneState == .knocked){
+            self.sceneImage.image = self.knock1
+        } else if(currentSceneState == .doubleKnocked){
+            self.sceneImage.image = self.knock2
+            self.playKnockKnockJoke()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+                self.sceneImage.image = self.open
+            }
         } else {
             regularSceneUpdate()
         }
@@ -100,7 +114,12 @@ class GameViewController: UIViewController {
             lastVisibleSceneImage = sceneImage.image
         }
     }
-        
+    
+    /*
+     * Function creates a timer that periodically gets data from the accelerometer.
+     * This raw data are smoothened with high pass filter.
+     * If a threshold is hit, knock is recognised and scene updated.
+     */
     private func observeDoor(){
         let motion = CMMotionManager()
         let motionUpdateInterval = 1.0/60.0     //60 Hz
@@ -114,7 +133,6 @@ class GameViewController: UIViewController {
             let knockTimer : Int = 60 //Timer for the second knock to occur
             // Accelerometer data
             var acceleration = Acceleration(smooth : (0,0,0), rolling : (0,0,0))
-            print("cool")
             // Configure a timer to fetch the data periodically
             let timer = Timer(fire: Date(), interval: motionUpdateInterval, repeats: true, block: { (timer) in
                 // Get the accelerometer data
@@ -135,28 +153,30 @@ class GameViewController: UIViewController {
                         abs(acceleration.smooth.y) < 0.02 && abs(data.acceleration.y) < 0.02 &&
                         abs(acceleration.smooth.z) > 0.05 &&
                         calibration == 0 ){
-
+                        
+                        /*
+                         * No previous knock is detected
+                         */
                         if (knockReset == 0) {
-                            self.sceneImage.image = self.knock1
+                            self.currentSceneState = .knocked
                             knockReset = knockTimer //Set up timer
+                            self.updateScene()
                         }
                         /*
                          * This condition prevents recognize one knock as two
-                         * because the sensors aren't still stabilized. We wait 7 cycles
+                         * because the sensors aren't still stabilized. We wait 7 cycles.
                          */
                         else if(knockReset < (knockTimer-7)){
-                            self.sceneImage.image = self.knock2
+                            self.currentSceneState = .doubleKnocked
                             knockReset = 0
                             timer.invalidate()
-                            self.playKnockKnockJoke()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-                                self.sceneImage.image = self.open
-                            }
+                            self.updateScene()
                         }
                     }
                         
                     /*
-                     * First we have to calibrate the sensors
+                     * At the begining we have to wait a few (=10) cycles
+                     * to stabilize the values from accelerometer.
                      */
                     else if (calibration > 0){
                         calibration = calibration-1
@@ -169,7 +189,8 @@ class GameViewController: UIViewController {
                     if(knockReset > 0){
                         knockReset = knockReset-1
                         if (knockReset == 0){
-                            self.sceneImage.image = self.unlocked
+                            self.currentSceneState = .showedNotYourDay
+                            self.updateScene()
                         }
                     }
                 }
@@ -179,7 +200,10 @@ class GameViewController: UIViewController {
         RunLoop.current.add(timer, forMode: .default)
         }
     }
-    
+
+    /*
+     * Function asynchronously displays a series of images, which create a conversation before opening the door.
+     */
     private func playKnockKnockJoke() {
         var delay = 0.0
         for jokeImage in jokeImages {
@@ -191,7 +215,7 @@ class GameViewController: UIViewController {
     }
     
     /*
-     * High pass filter to smoothen our data
+     * High pass filter which smoothes the data from the accelerometer
      */
     private func highPassFilter(currentValues: (x: Double, y: Double,z: Double), acceleration: Acceleration) -> Acceleration{
         let kFilteringFactor : Double = 0.5
