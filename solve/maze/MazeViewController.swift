@@ -22,15 +22,14 @@ class MazeViewController: UIViewController {
                 
                 // Present the scene
                 view.presentScene(scene)
+                
+                // Set this viewController as property of the MazeScene to call the segue to the next puzzle from the MazeScene
                 if let gameScene = scene as? MazeScene {
                     gameScene.viewController = self
                 }
             }
             
             view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
         }
         
         

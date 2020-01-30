@@ -40,10 +40,13 @@ class GameViewController: UIViewController {
     
     var currentSceneState: SceneState = .unsolved
     
+    // Bool that is need to decide if when the power is not connected the image with or without text is shown. The image with text should be only shown at the start. Since the updateScene method runs multiple times when the app loads, we need a variable to store this state.
     var lampWasOn: Bool = false
     //var showedNotYourDay: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
+        //Service that provides the current status of the power cable connection
+        //The service can also notify via an callback function, if the state has changed
         powerCableConnectionService = PowerCableConnectionService()
         jokeImages = [joke1, joke2, joke3, joke4, joke5]
         super.init(coder: aDecoder)
@@ -51,26 +54,20 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // State is set to .solved if controller is calld via segue from last puzzle controller
+        // Then the knocks on the door need to be observed
         if (currentSceneState == .solved) {
             observeDoor()
         }
+        
+        // Register callback functions that should be called if the power cable gots connected of disconnected
         powerCableConnectionService.register(connectCallback: updateScene)
         powerCableConnectionService.register(disconnectCallback: updateScene)
         updateScene()
     }
-    
-    fileprivate func showTextAfterPuzzlesSolved() {
-        DispatchQueue.main.async {
-            self.sceneImage.image = self.notYourDay
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            self.regularSceneUpdate()
-        }
-        currentSceneState = .showedNotYourDay
-    }
-    
+        
     /*
-     * Function update the current scene based on currentSceneState
+     * Function update the current shown image based on currentSceneState
      */
     private func updateScene() {
         if(currentSceneState == .solved) {
@@ -88,9 +85,22 @@ class GameViewController: UIViewController {
         }
     }
     
+    // Shows the intermediate image after the last door puzzle is solved and perform a regularSceen
+    fileprivate func showTextAfterPuzzlesSolved() {
+        DispatchQueue.main.async {
+            self.sceneImage.image = self.notYourDay
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.regularSceneUpdate()
+        }
+        currentSceneState = .showedNotYourDay
+    }
+    
+    //Updates the current scene depending on the state of the power cable
     fileprivate func regularSceneUpdate() {
         let isPluggedIn = powerCableConnectionService.isPluggedIn()
         if (!isPluggedIn) {
+            //Distinguish between shown the dark image the first time or not
             if(!lampWasOn){
                 sceneImage.image = inital_black
             } else {
@@ -99,11 +109,14 @@ class GameViewController: UIViewController {
         }
         else {
             lampWasOn = true
+            // If the lamp is on again the previus scene image is restored if exists
             if lastVisibleSceneImage != nil {
                 sceneImage.image = lastVisibleSceneImage
             } else {
+                // If not the current scene stated determines the shown image
                 if(currentSceneState == .unsolved){
                     sceneImage.image = locked
+                    //start with the lock puzzles when puzzles are unsolved
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         self.performSegue(withIdentifier: "mazeSegue", sender: self)
                     }

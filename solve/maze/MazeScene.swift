@@ -27,6 +27,7 @@ class MazeScene : SKScene, SKPhysicsContactDelegate {
     let holeRadius: CGFloat = 20
     let marbleRadius: CGFloat = 15
     
+    // Thresholds that have been measured as 'natural magentic field', to prevent the marble be controlled by using the natural magnetic field
     let maxNaturalX = 70.0
     let maxNaturalY = 130.0
 
@@ -36,6 +37,13 @@ class MazeScene : SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         
+        // For exam preparation: Explanation of Colission Bit masks https://www.makeschool.com/academy/track/standalone/build-hoppy-bunny-with-spritekit-in-swift/setting-up-collisions
+        // Bitmasks
+        // marble: 000000001 => 1
+        // walls:  000000010 => 2
+        // hole:   000000100 => 4
+        
+        //Setup of marble in scene
         let marble = SKShapeNode(circleOfRadius: marbleRadius)
         marble.fillColor = .gray
         marble.lineWidth = 0
@@ -45,10 +53,11 @@ class MazeScene : SKScene, SKPhysicsContactDelegate {
         marble.physicsBody = SKPhysicsBody(circleOfRadius: marbleRadius)
         marble.physicsBody?.isDynamic = true
         marble.physicsBody?.categoryBitMask = 1
-        marble.physicsBody?.collisionBitMask = 2
-        marble.physicsBody?.contactTestBitMask = 4
+        marble.physicsBody?.collisionBitMask = 2 // => collides with walls
+        marble.physicsBody?.contactTestBitMask = 4 // => calls did begin contact if contacts hole (but no physical colission)
         self.addChild(marble)
         
+        //Setup of hole in scene
         let hole = SKShapeNode(circleOfRadius: holeRadius)
         hole.fillColor = .black
         hole.lineWidth = 0
@@ -58,82 +67,52 @@ class MazeScene : SKScene, SKPhysicsContactDelegate {
         hole.physicsBody = SKPhysicsBody(circleOfRadius: 5)
         hole.physicsBody?.isDynamic = false
         hole.physicsBody?.categoryBitMask = 4
-        hole.physicsBody?.contactTestBitMask = 1
         self.addChild(hole)
 
         self.physicsWorld.contactDelegate = self
         
-//        let operationQueue = OperationQueue()
-//        if(motionManager.isMagnetometerAvailable) {
-//            print ("Magentometer Available")
-//        }
-//        if(motionManager.isMagnetometerActive) {
-//            print ("Magentometer Active")
-//        }
+        //Set update interval (30 times per second)
         motionManager.magnetometerUpdateInterval = 1/30
+        //Needs to be called to receive magenetometer values
         motionManager.startMagnetometerUpdates()
-        //        motionManager.startMagnetometerUpdates(to: operationQueue) { (magnetometerData, error) in
-        //            guard error == nil else {
-        //                print(error!)
-        //                return
-        //            }
-        //
-        //            if let magnetData = magnetometerData {
-        //                print("X: ", magnetData.magneticField.x)
-        //                print("Y: ", magnetData.magneticField.y)
-        //            }
-        //        }
-        
-//        if(motionManager.isMagnetometerActive) {
-//            print ("Magentometer Active")
-//        }
-//
-//        print("didMove finished")
     }
 
     func didBegin(_ contact: SKPhysicsContact) {
+        //Detect colission betwene marble and hole.
         if(contact.bodyA.node?.name == marbleName || contact.bodyB.node?.name == marbleName ) {
             if(contact.bodyA.node?.name == holeName || contact.bodyB.node?.name == holeName ) {
                 guard let marble = self.childNode(withName: marbleName) else { return }
+                //Delete marble
                 marble.removeFromParent()
-                sleep(1)
-                viewController.performSegue(withIdentifier: "segueVolume", sender: self)
+                //Call segue to next puzzle with delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.viewController.performSegue(withIdentifier: "segueVolume", sender: self)
+                }
             }
         }
     }
-
-    //    private func magnetometerHandler(data: CMMagnetometerData?, error: Error?) {
-    //        print("magnetometerHandler")
-    //        print("X: ", data?.magneticField.x ?? "")
-    //        print("Y: ", data?.magneticField.y ?? "")
-    //    }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-//        print(motionManager.isMagnetometerActive)
-        
+        // Called before each frame is renderd => currently movement depends on framerate, could be solved with deltea time calculation
         guard let marble = self.childNode(withName: marbleName) else { return }
         if let magnetData = motionManager.magnetometerData {
-            let oldX = Double(marble.position.x)
-            let oldY = Double(marble.position.y)
             let magneticX = magnetData.magneticField.x
             let magneticY = magnetData.magneticField.y
+            
+            // Some scale factor to reduce the speed of the marble
             let scaleFactor = 500.0
-//            print("Magnetic X", magneticX)
-//            print("Magnetic Y", magneticY)
-            maxX = maxX < abs(magneticX) ? abs(magneticX) : maxX
-            maxY = maxY < abs(magneticY) ? abs(magneticY) : maxY
+            
+            //Scale magnetic measurements or set to 0 if they seam to be natural
             let isNaturalMagnetism = abs(magneticX) < maxNaturalX && abs(magneticY) < maxNaturalY
             let scaledMagneticX = isNaturalMagnetism ? 0 : magneticX / scaleFactor
             let scaledMagneticY = isNaturalMagnetism ? 0 : magneticY / scaleFactor
-//            print("Scaled X: ", magneticX, scaledMagneticX)
-//            print("Scaled Y: ", magneticY, scaledMagneticY)
-//            print("Current X", marble.position.x)
-//            print("Current Y", marble.position.y)
-            marble.position = CGPoint(x: oldX + -scaledMagneticY, y: oldY + scaledMagneticX)
+            
+            // Need to switch axis becaus of differen coordinate systems between game sceene and magneto meter
+            let currentMarblePositionX = Double(marble.position.x)
+            let currentMarblePositionY = Double(marble.position.y)
+            let newMarblePositionX = currentMarblePositionX + -scaledMagneticY
+            let newMarblePositionY = currentMarblePositionY + scaledMagneticX
+            marble.position = CGPoint(x: newMarblePositionX, y: newMarblePositionY)
         }
-        //        marble
-        
-        
     }
 }

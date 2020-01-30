@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1118F23F23D85D0800FDCC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F23E23D85D0800FDCC2E /* AppDelegate.swift */; };
-		1118F24123D85D0800FDCC2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1118F24023D85D0800FDCC2E /* GameScene.sks */; };
-		1118F24523D85D0800FDCC2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118F24423D85D0800FDCC2E /* GameScene.swift */; };
 		1118F24A23D85D0800FDCC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F24823D85D0800FDCC2E /* Main.storyboard */; };
 		1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1118F24B23D85D0F00FDCC2E /* Assets.xcassets */; };
 		1118F24F23D85D0F00FDCC2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1118F24D23D85D0F00FDCC2E /* LaunchScreen.storyboard */; };
@@ -37,8 +35,6 @@
 /* Begin PBXFileReference section */
 		1118F23B23D85D0800FDCC2E /* Solve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1118F23E23D85D0800FDCC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1118F24023D85D0800FDCC2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		1118F24423D85D0800FDCC2E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		1118F24923D85D0800FDCC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1118F24B23D85D0F00FDCC2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1118F24E23D85D0F00FDCC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,8 +96,6 @@
 				1118F28823D8732700FDCC2E /* passwordCube */,
 				1118F28023D8732700FDCC2E /* volumeRockers */,
 				1118F23E23D85D0800FDCC2E /* AppDelegate.swift */,
-				1118F24023D85D0800FDCC2E /* GameScene.sks */,
-				1118F24423D85D0800FDCC2E /* GameScene.swift */,
 				2885354523DE48B8004A7081 /* GameViewController.swift */,
 				1118F24823D85D0800FDCC2E /* Main.storyboard */,
 				1118F24B23D85D0F00FDCC2E /* Assets.xcassets */,
@@ -228,7 +222,6 @@
 				2941A91923DEDF2800C28A5C /* password.png in Resources */,
 				1118F2A023D8732700FDCC2E /* volume.storyboard in Resources */,
 				1118F2A123D8732700FDCC2E /* speakers-1521314_1280.png in Resources */,
-				1118F24123D85D0800FDCC2E /* GameScene.sks in Resources */,
 				1118F24C23D85D0F00FDCC2E /* Assets.xcassets in Resources */,
 				1118F2A223D8732700FDCC2E /* speedLinesRounded.png in Resources */,
 				2941A91D23DEDF2800C28A5C /* image_p.png in Resources */,
@@ -248,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1118F24523D85D0800FDCC2E /* GameScene.swift in Sources */,
 				C67B577923D8E92C0073ADAA /* PowerCableConnectionService.swift in Sources */,
 				C67B577623D8E4860073ADAA /* Acceleration.swift in Sources */,
 				1118F2B523D8732700FDCC2E /* MazeScene.swift in Sources */,
@@ -401,13 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8493XD9JJJ;
+				DEVELOPMENT_TEAM = F3J5KRTGTH;
 				INFOPLIST_FILE = Solve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = elznic.rwth.solve;
+				PRODUCT_BUNDLE_IDENTIFIER = earth.schroeder.solve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -425,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = elznic.;
+				PRODUCT_BUNDLE_IDENTIFIER = earth.schroeder.solve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
